@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+</head>
+<body ng-controller="StoreController as store">
+    <ul>
+        <li ng-repeat="repo in store.repos | orderBy:'company' | limitTo: '6'">
+            <p><a href="{{repo.link}}">{{repo.company}}</a></p>
+            <p>{{repo.about}}</p>
+        </li>
+    </ul>
+</body>
+</html>
